@@ -1,0 +1,15 @@
+{
+  "version": 2, 
+  "name": "nodejs24042020",
+  "builds": [
+    {"src": "./src/api/server.js", "use": "@now/node-server"}
+  ],
+  "routes": [
+    {"src": "/(.*)", "dest": "./src/api/server.js"}
+  ],
+  "env": {
+    "MYSQL_USER":"@register-root",
+    "HOSTNAME":"@register-localhost",
+    "MYSQL_PASSWORD": "@register-password"
+  }
+}

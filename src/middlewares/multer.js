@@ -13,10 +13,10 @@ const storage = multer.diskStorage({
 
 const upload = multer({
   storage,
-  limits: {fileSize: 500},
+  limits: {fileSize: 500000},
   fileFilter: (req, file, cb) => {
     if (!file.originalname.match(/\.(pdf|doc|docx|odt|txt)$/)) {
-      return cb(new Error('Only image files are allowed!'));
+      return cb(new Error('Only (pdf|doc|docx|odt|txt) files are allowed!'));
     }
     cb(null, true);
   }
